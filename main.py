@@ -25,8 +25,7 @@ class TodoResponse(BaseModel):
 @app.get("/")
 def read_root():
     """헬스체크 엔드포인트 - 서버가 정상 동작하는지 확인"""
-    return {"message": "TaskFlow MVP is running!", "version": "0.1.0"}
-
+    return {"message": "TaskFlow MVP is running!", "version": "0.1.100"}
 @app.get("/todos", response_model=List[TodoResponse])
 def get_todos():
     """모든 TODO 조회"""
@@ -69,9 +68,14 @@ def complete_todo(todo_id: int):
     raise HTTPException(status_code=404, detail="TODO not found")
 
 
-# Dockerfile 작성
-# 10:00~10:10까지 로컬에서 도커로 잘 동작되는지 테스트
+# 우리가 만든 서비스 배포하기
+# mysite.com:8000으로 확인
 
-# docker run -d -p 8000:8000 taskflow-mvp:v0.1.0 # 태그 명시 체크
+# ec2 인스턴스 준비
+# git clone
+# docker build -t taskflow-mvp:v0.1.0 .
+# docker run -d -p 8000:8000 taskflow-mvp:v0.1.0
 
-# 변경된 코드 푸시 -> 깃허브에 푸시
+# ec2의 포트와 container의 포트 매핑 원리 이해하기
+# 문제가 생겼을 경우, 보안 그룹 설정방법 이해하기
+# 10:30까지 진행하겠습니다!
