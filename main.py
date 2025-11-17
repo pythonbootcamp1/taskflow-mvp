@@ -79,3 +79,11 @@ def complete_todo(todo_id: int):
 # ec2의 포트와 container의 포트 매핑 원리 이해하기
 # 문제가 생겼을 경우, 보안 그룹 설정방법 이해하기
 # 10:30까지 진행하겠습니다!
+
+
+
+# github actions 설정
+# 1. .github/workflows/deploy.yml 파일 생성
+# 2. main 브랜치에 push하면 실행
+# 3. github actions 확인
+# 11:30까지 진행하겠습니다!
