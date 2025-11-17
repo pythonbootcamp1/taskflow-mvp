@@ -67,3 +67,11 @@ def complete_todo(todo_id: int):
             return todo
 
     raise HTTPException(status_code=404, detail="TODO not found")
+
+
+# Dockerfile 작성
+# 10:00~10:10까지 로컬에서 도커로 잘 동작되는지 테스트
+
+# docker run -d -p 8000:8000 taskflow-mvp:v0.1.0 # 태그 명시 체크
+
+# 변경된 코드 푸시 -> 깃허브에 푸시
